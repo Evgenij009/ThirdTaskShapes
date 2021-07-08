@@ -1,4 +1,4 @@
-package entity;
+package by.epam.eugene.entity;
 
 public class CustomPoint {
     private double x;
