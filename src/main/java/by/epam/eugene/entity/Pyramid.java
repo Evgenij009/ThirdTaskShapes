@@ -76,12 +76,12 @@ public class Pyramid {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Pyramid{");
+        final StringBuffer sb = new StringBuffer("\nPyramid{");
         sb.append("pyramidId=").append(pyramidId);
         sb.append(", pointCenterOfBase=").append(pointCenterOfBase);
         sb.append(", height=").append(height);
         sb.append(", sideLength=").append(sideLengthBase);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
     }
 }
