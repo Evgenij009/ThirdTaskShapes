@@ -2,7 +2,7 @@ package by.epam.eugene.validator;
 
 import java.io.File;
 
-public class PyramidFileValid {
+public class CustomFileValidator {
 
     public static boolean isFileValid(String pathFile) {
         if (pathFile == null || pathFile.isEmpty()) {
