@@ -1,5 +1,7 @@
 package by.epam.eugene.entity;
 
+import by.epam.eugene.util.PyramidIdGeneration;
+
 //the base is a regular triangle
 public class Pyramid {
     private long pyramidId;
@@ -7,8 +9,8 @@ public class Pyramid {
     private double height;
     private double sideLengthBase;
 
-    public Pyramid(long pyramidId, CustomPoint pointCenterOfBase, double height, double sideLength) {
-        this.pyramidId = pyramidId;
+    public Pyramid(CustomPoint pointCenterOfBase, double height, double sideLength) {
+        this.pyramidId = PyramidIdGeneration.generateId();
         this.pointCenterOfBase = pointCenterOfBase;
         this.height = height;
         this.sideLengthBase = sideLength;
