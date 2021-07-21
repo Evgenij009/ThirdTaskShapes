@@ -1,7 +1,7 @@
 package by.epam.eugene.parser;
 
 import by.epam.eugene.exception.PyramidException;
-import by.epam.eugene.validator.PyramidLineValidator;
+import by.epam.eugene.validator.PyramidValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,13 +24,13 @@ public class PyramidParser {
         List<double[]> pyramids = new ArrayList<>();
         for (String line : arrayLines) {
             List<Double> pyramidTmp = new ArrayList<>();
-            if (PyramidLineValidator.isValidLineWithParameters(line)) {
+            if (PyramidValidator.isValidLineWithParameters(line)) {
                 Matcher matcher = pattern.matcher(line);
                 while (matcher.find()) {
                     pyramidTmp.add(Double.valueOf(matcher.group(1)));
                 }
             }
-            if (pyramidTmp.size() == VALID_COUNT_DATA) { //todo validator method
+            if (PyramidValidator.isParametersValid(pyramidTmp)) { 
                 pyramids.add(pyramidTmp.stream().mapToDouble(Double::doubleValue).toArray());
             }
         }
