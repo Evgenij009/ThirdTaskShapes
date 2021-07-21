@@ -1,7 +1,7 @@
 package by.epam.eugene.reader;
 
 import by.epam.eugene.exception.PyramidException;
-import by.epam.eugene.validator.PyramidFileValid;
+import by.epam.eugene.validator.CustomFileValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +17,7 @@ public class PyramidReader {
     private static Logger logger = LogManager.getLogger();
 
     public List<String> read(String pathFile) throws PyramidException {
-        if (!PyramidFileValid.isFileValid(pathFile)) {
+        if (!CustomFileValidator.isFileValid(pathFile)) {
             logger.error("File can not valid.  Path: " + pathFile);
             throw new PyramidException("File can not valid.  Path: " + pathFile);
         }
