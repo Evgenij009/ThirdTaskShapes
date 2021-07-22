@@ -55,7 +55,6 @@ public class Pyramid {
 
         Pyramid pyramid = (Pyramid) o;
 
-        if (pyramidId != pyramid.pyramidId) return false;
         if (Double.compare(pyramid.height, height) != 0) return false;
         if (Double.compare(pyramid.sideLengthBase, sideLengthBase) != 0) return false;
         return pointCenterOfBase != null ? pointCenterOfBase.equals(pyramid.pointCenterOfBase) : pyramid.pointCenterOfBase == null;
