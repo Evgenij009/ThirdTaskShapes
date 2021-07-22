@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Pyramid Shape tests" verbose="1">
-    <test name="Test repository">
-        <classes>
-            <class name=""/>
-        </classes>
-    </test>
+<!--    <test name="Test repository">-->
+<!--        <classes>-->
+<!--            <class name=""/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="Test factory">
         <classes>
-            <class name=""/>
+            <class name="by.epam.eugene.factory.PyramidFactoryTest"/>
         </classes>
     </test>
 
@@ -27,7 +27,7 @@
 
     <test name="Test service">
         <classes>
-            <class name=""/>
+            <class name="by.epam.eugene.service.impl.PyramidCalculateServiceImplTest"/>
         </classes>
     </test>
 
