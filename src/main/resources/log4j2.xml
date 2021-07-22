@@ -3,7 +3,7 @@
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} %c{1} %-1level  - %msg%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %c{1} %-1level - %msg%n"/>
         </Console>
 
         <RollingFile name="rollingFile"
