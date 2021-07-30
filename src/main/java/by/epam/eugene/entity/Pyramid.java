@@ -1,13 +1,17 @@
 package by.epam.eugene.entity;
 
+import by.epam.eugene.observer.PyramidEvent;
+import by.epam.eugene.observer.PyramidObservable;
+import by.epam.eugene.observer.PyramidObserver;
 import by.epam.eugene.util.PyramidIdGeneration;
 
 //the base is a regular triangle
-public class Pyramid {
+public class Pyramid implements PyramidObservable {
     private long pyramidId;
     private CustomPoint pointCenterOfBase;
     private double height;
     private double sideLengthBase;
+    private PyramidObserver observer;
 
     public Pyramid(CustomPoint pointCenterOfBase, double height, double sideLength) {
         this.pyramidId = PyramidIdGeneration.generateId();
@@ -49,6 +53,23 @@ public class Pyramid {
     }
 
     @Override
+    public void attach(PyramidObservable observable) {
+        this.observer = observer;
+    }
+
+    @Override
+    public void detach() {
+        this.observer = null;
+    }
+
+    @Override
+    public void notifyObservers() {
+        if (observer != null) {
+            observer.updateParameters(new PyramidEvent(this));
+        }
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -83,4 +104,5 @@ public class Pyramid {
         sb.append("}");
         return sb.toString();
     }
+
 }
